@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAVYBRENDA  GREENS</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f0fdf4; }
+    .container { display:flex; min-height:100vh; }
+    .sidebar { width:230px; background:#166534; color:white; padding:20px; }
+    .sidebar h2 { margin-bottom:20px; }
+    .sidebar button { width:100%; padding:10px; margin-bottom:8px; border:none; background:#15803d; color:white; cursor:pointer; border-radius:6px; }
+    .sidebar button:hover { background:#22c55e; }
+    .content { flex:1; padding:20px; }
+    h1 { margin-bottom:15px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:15px; }
+    .card { background:white; padding:15px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    table { width:100%; background:white; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    th, td { padding:12px; border-bottom:1px solid #e5e7eb; text-align:left; }
+    th { background:#dcfce7; }
+    .alert { background:#fef9c3; padding:10px; border-left:5px solid #eab308; border-radius:6px; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <h2>🌱 DAVYBREE GREENS  </h2>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('crops')">Crops</button>
+    <button onclick="showSection('Poultry')">Poultry</button>
+    <button onclick="showSection('livestock')">Livestock</button>
+    <button onclick="showSection('production')">Production</button>
+    <button onclick="showSection('finance')">Pricing</button>
+    <button onclick="showSection('alerts')">Alerts</button>
+  </div>
+
+  <div class="content">
+    <div id="dashboard" class="section">
+      <h1>Farm Dashboard</h1>
+      <div class="grid">
+        <div class="card">Crops<br><strong>6 Plots</strong></div>
+        <div class="card">Cows<br><strong>4</strong></div>
+        <div class="card">Goats<br><strong>18</strong></div>
+        <div class="card">Pigs<br><strong>7</strong></div>
+        <div class="card">Poultry<br><strong>150</strong></div>
+        <div class="card">Milk Today<br><strong>52 L</strong></div>
+        <div class="card">Eggs Today<br><strong>110</strong></div>
+      </div>
+    </div>
+
+    <div id="crops" class="section" style="display:none">
+      <h1>Crop Management</h1>
+      <table>
+        <tr><th>Crop</th><th>Area</th><th>Status</th></tr>
+        <tr><td>Maize</td><td>1 Acre</td><td>Growing</td></tr>
+        <tr><td>Potatoes</td><td>0.5 Acre</td><td>Ready</td></tr>
+        <tr><td>Beans</td><td>0.7 Acre</td><td>Flowering</td></tr>
+      </table>
+    </div>
+
+    <div id="livestock" class="section" style="display:none">
+      <h1>Livestock</h1>
+      <table>
+        <tr><th>Type</th><th>Count</th><th>Health</th></tr>
+        <tr><td>Cows</td><td>4</td><td>Good</td></tr>
+        <tr><td>Goats</td><td>18</td><td>Good</td></tr>
+        <tr><td>Pigs</td><td>7</td><td>Monitor</td></tr>
+        <tr><td>Poultry</td><td>150</td><td>Good</td></tr>
+      </table>
+    </div>
+
+    <div id="production" class="section" style="display:none">
+      <h1>Production</h1>
+      <div class="grid">
+        <div class="card">Milk / Day<br><strong>52 L</strong></div>
+        <div class="card">Eggs / Day<br><strong>110</strong></div>
+      </div>
+    </div>
+
+    <div id="finance" class="section" style="display:none">
+      <h1>Finance</h1>
+      <div class="grid">
+        <div class="card">Expenses<br><strong>KES 82,000</strong></div>
+        <div class="card">Revenue<br><strong>KES 145,000</strong></div>
+        <div class="card">Profit<br><strong>KES 63,000</strong></div>
+      </div>
+    </div>
+
+    <div id="alerts" class="section" style="display:none">
+      <h1>Alerts</h1>
+      <div class="alert">Low feed for pigs</div>
+      <div class="alert">Potatoes ready for harvest</div>
+      <div class="alert">Vaccination due: Goats</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
+</body>
+</html>
